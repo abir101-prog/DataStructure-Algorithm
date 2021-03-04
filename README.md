@@ -1,2 +1,2 @@
 # DataStructure-Algorithm
-This repo will act as a storage.
+This repo will be enriched as I learn datastructure and algorithm. It is just a personal record.
