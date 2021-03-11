@@ -1,7 +1,5 @@
 /*
-    -divide the array into 2 subarrays
-    -sort them
-    -merge them
+    Merge Sort is a Divide and Conquer algorithm. It divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves. The merge() function is used for merging two halves. The merge(arr, l, m, r) is a key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one.
 */
 
 #include <iostream>
@@ -9,10 +7,10 @@
 
 using namespace std;
 
-void merger(int arr[], int l, int r) { //l = left, r = right
+void merger(int arr[], int l, int m, int r) { //l = left, r = right
     if (l == r - 1) return;
 
-    int m = (l + r) / 2;
+    // int m = (l + r) / 2;
     int l1, l2; 
     l1 = m - l + 1; 
     l2 = r - m;
@@ -48,14 +46,13 @@ void merge_sort(int arr[], int l, int r) {
     int m = (l + r) / 2;
     merge_sort(arr, l, m);
     merge_sort(arr, m + 1, r);
-    merger(arr, l, r);
+    merger(arr, l, m, r);
     return;
 }
 
 int main() {
     int arr[] = {1, 9, 2, 6, 2, 5, 8};
     merge_sort(arr,0, 6);
-    cout << "h\n";
     for (int i = 0; i < 7; i++) cout << arr[i] << " ";
 
     return 0;
